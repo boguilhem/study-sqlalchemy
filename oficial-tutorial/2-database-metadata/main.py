@@ -1,4 +1,3 @@
-import logging
 from sqlalchemy import create_engine, MetaData, ForeignKey
 
 engine = create_engine("sqlite+pysqlite:///:memory:", echo=True, future=True)
@@ -43,9 +42,6 @@ Base = declarative_base()
 
 
 class User(Base):
-    def __init__(self):
-        self.sandy = User(name="sandy", fullname="Sandy Cheeks")
-
     __tablename__ = "user_account"
     id = Column(Integer, primary_key=True)
     name = Column(String(30))
